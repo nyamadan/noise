@@ -1,0 +1,39 @@
+<!doctype html>
+<link rel="import" href="../../packages/polymer/polymer.html">
+<polymer-element name="x-noise-canvas">
+  <template>
+    <style>
+      .container {
+        float:left;
+      }
+    </style>
+    <div id="simPlotQuad" class="container">
+    </div>
+    <div class="container">
+      <form id="form" on-submit="{{onSubmitGraph}}">
+        <label>
+          persistence
+          <input type="number" value="{{persistence}}" min="0" max="1" step="0.001" required/>
+        </label>
+        <br>
+        <label>
+          wavelength
+          <input type="number" value="{{wavelength}}" min="1" max="255" required/>
+        </label>
+        <br>
+        <label>
+          seed
+          <input type="number" value="{{seed}}" required/>
+        </label>
+        <br>
+        <label>
+          <input type="checkbox" checked="{{isRandom}}"/>
+          random seed
+        </label>
+        <br>
+        <input type="submit" value="plot"/>
+      </form>
+    </div>
+  </template>
+  <script type="application/dart" src="noise_canvas.dart"></script>
+</polymer-element>

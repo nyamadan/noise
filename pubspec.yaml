@@ -1,0 +1,11 @@
+name: noise
+
+dependencies:
+  browser: any
+  polymer: any
+  simplot:
+    git: git://github.com/scribeGriff/simplot.git
+
+transformers:
+- polymer:
+    entry_points: web/index.html
